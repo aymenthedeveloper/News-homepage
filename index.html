@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <title>News homepage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <img class="logo" src="./assets/images/logo.svg" alt="">
+      <img class="menu-icon" src="./assets/images/icon-menu.svg" alt="">
+      <nav>
+        <img class="close-icon" src="./assets/images/icon-menu-close.svg" alt="">
+        <a href="#">Home</a>
+        <a href="#">New</a>
+        <a href="#">Popular</a>
+        <a href="#">Trending</a>
+        <a href="#">Categories</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero-section">
+        <img src="./assets/images/image-web-3-desktop.jpg" alt="">
+        <h1>The Bright Future of Web 3.0?</h1>
+        <div>
+          <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+            But is it really fulfilling its promise?</p>
+          <button>Read more</button>
+        </div>
+      </section>
+      <section class="right-section">
+        <h2 class="title">New</h2> 
+        <article>
+          <a href="#">Hydrogen VS Electric Cars</a>
+          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </article>
+        <article>
+          <a href="#">The Downsides of AI Artistry</a>
+          <p>What are the possible adverse effects of on-demand AI image generation?</p>
+        </article>
+        <article>
+          <a href="#">Is VC Funding Drying Up?</a>
+          <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        </article>
+      </section>
+      <section class="bottom-section">
+        <article>
+          <img src="./assets/images/image-retro-pcs.jpg" alt="">
+          <p class="number">01</p>
+          <a href="#">Reviving Retro PCs</a>
+          <p class="description">What happens when old PCs are given modern upgrades?</p>
+        </article>
+        <article>
+          <img src="./assets/images/image-top-laptops.jpg" alt="">
+          <p class="number">02</p>
+          <a href="#">Top 10 Laptops of 2022</a>
+          <p class="description">Our best picks for various needs and budgets.</p>
+        </article>
+        <article>
+          <img src="./assets/images/image-gaming-growth.jpg" alt="">
+          <p class="number">03</p>
+          <a href="#">The Growth of Gaming</a>
+          <p class="description">How the pandemic has sparked fresh opportunities.</p>
+        </article>
+      </section>
+    </main>  
+  </div>
+  <script>
+    document.querySelector('.menu-icon').addEventListener('click', (e)=> {
+      e.target.nextElementSibling.classList.add('show');
+    });
+    document.querySelector('.close-icon').addEventListener('click', (e)=> {
+      e.target.parentElement.classList.remove('show');
+    });
+  </script>
+</body>
+</html>

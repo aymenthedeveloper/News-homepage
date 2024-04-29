@@ -1,0 +1,268 @@
+$Soft-orange: hsl(35, 77%, 62%);
+$Soft-red: hsl(5, 85%, 63%);
+$Off-white: hsl(36, 100%, 99%);
+$Grayish-blue: hsl(233, 8%, 79%);
+$Dark-grayish-blue: hsl(236, 13%, 42%);
+$Very-dark-blue: hsl(240, 100%, 5%);
+
+:root{
+  --pad-x: 10.3em;
+}
+body{
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'inter', sans-serif;
+  padding-bottom: 50px;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+p{
+  font-size: 15px;
+  line-height: 160%;
+}
+
+header{
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding-inline: var(--pad-x);
+  padding-block: 5.5em 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo{
+    cursor: pointer;
+  }
+  .menu-icon{
+    display: none;
+    cursor: pointer;
+  }
+  nav{
+    display: flex;
+    gap: 1rem 2.45rem;
+    position: relative;
+    z-index: 2;
+    a:hover {
+      color: $Soft-red;
+    }
+    .close-icon{
+      display: none;
+      position: absolute;
+      width: 32px;
+      margin: 28px 16px;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+main{
+  max-width: 1440px;
+  box-sizing: border-box;
+  padding-inline: var(--pad-x);
+  padding-block: 0em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4.25em 2rem;
+}
+main .hero-section{
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  img{
+    width: 100%;
+    grid-column: span 2;
+    margin-bottom: 34px;
+  }
+  h1{
+    font-size: clamp(2.5rem, 4vw + 1rem, 3.5rem);
+    margin-block: 0 .25em;
+    line-height: 100%;
+    font-weight: 800;
+  }
+  > div p{
+    margin-block: 0 2em;
+  }
+  > div button{
+    width: 185px;
+    height: 50px;
+    border: none;
+    padding: 0;
+    background-color: $Soft-red;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    cursor: pointer;
+    &:hover{
+      background-color: $Very-dark-blue;
+    }
+  }
+}
+main .right-section{
+  background-color: $Very-dark-blue;
+  color: white;
+  padding-inline: 24px;
+  padding-block: 16px;
+  h2{
+    font-size: 2.45rem;
+    margin-block: 0.25em .85em;
+    color: $Soft-orange;
+  }
+  article{
+    position: relative;
+    padding-bottom: 30px;
+    &:not(:last-child)::after{
+      content: '';
+      width: 100%;
+      height: 1px; 
+      position: absolute;
+      inset: auto 0 0 0;
+      background-color: #fff;
+    }
+    &:last-child{
+      padding-bottom: 0;
+    }
+  }
+  article a{
+    display: block;
+    margin-top: 1.675em;
+    margin-bottom: .4em;
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    cursor: pointer;
+    &:hover{
+      color: $Soft-orange;
+    }
+  }
+  article p{
+    margin-block: 0;
+    color: $Dark-grayish-blue;
+  }
+  
+  
+
+}
+
+main .bottom-section{
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 28px;
+  article{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    column-gap: 24px;
+    
+    img{
+      grid-row: span 3;
+      width: 100%;
+    }
+    .number{
+      color: $Grayish-blue;
+      font-weight: 800;
+      font-size: 2rem;
+      margin-block: 0;
+      line-height: 100%;
+      margin-bottom: .375em;
+    }
+    a{
+      display: block;
+      font-weight: 700;
+      font-size: 1.15rem;
+      cursor: pointer;
+      &:hover{
+        color: $Soft-red;
+      }
+    }
+    .description{
+      margin-top: .75em;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: 1400px){
+  :root{
+    --pad-x: 5em;
+  }
+}
+@media (max-width: 1200px){
+  :root{
+    --pad-x: 1.5em;
+  }
+}
+@media (max-width: 1100px){
+  main{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem 1rem;   
+  }
+  main .hero-section{
+    grid-column: span 4;
+  }
+  main .right-section{
+    grid-column: span 2;
+  }
+  main .bottom-section{
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 800px){
+  :root{
+    --pad-x: 16px;
+  }
+  header{
+    padding-block: 1.75em 2rem;
+    .logo {
+      width: 45px;
+    }
+    nav{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 60%;
+      overflow: hidden;
+      position: fixed;
+      background-color: #fff;
+      inset: 0 var(--pos-x, -100%) 0 auto;
+      transition-duration: .3s;
+      a {
+        margin-left: 1rem;
+      }
+      .close-icon{
+        display: block;
+      }
+    }
+    nav.show{
+      --pos-x: 0%;
+      box-shadow: 0 0 5px 1000px rgba(0, 0, 0, 0.301);
+    }
+    .menu-icon{
+      display: block;
+    }
+  }
+  main .hero-section,
+  main .right-section,
+  main .bottom-section{
+    grid-column: span 4;
+  }
+  main .hero-section h1,
+  main .hero-section > div{
+    grid-column: span 2;
+  }
+  main .hero-section img{
+    grid-column: span 2;
+    aspect-ratio: 1.15 / 1;
+    object-fit: cover;
+  }
+  main .bottom-section article{
+    column-gap: 10px;
+    p {
+      font-size: 14px;
+    }
+  }
+}
